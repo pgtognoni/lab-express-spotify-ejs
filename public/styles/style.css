@@ -15,6 +15,7 @@ body {
     padding: 0;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
+    background-color: var(--background-black);
 }
 
 .search-container {
@@ -142,7 +143,7 @@ nav a {
     padding: 3rem;
 }
 
-@media screen and (max-width: 728px) {
+@media screen and (max-width: 800px) {
     .artists,
     .albums,
     .tracks { 
@@ -156,6 +157,7 @@ nav a {
     justify-content: center;
     align-items: center;
     background-color: rgba(43, 42, 42, 0.7);
+    max-width: 450px;
     padding: 0;
     border-radius: 15px;
     box-shadow: inset -2px -2px 8px var(--shadow-light), inset 2px 2px 8px var(--shadow-dark);
