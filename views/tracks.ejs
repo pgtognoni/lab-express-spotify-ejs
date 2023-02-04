@@ -1,0 +1,29 @@
+<nav>
+    <button onclick={window.history.back()}> Back </button>
+    <a href="/"><i class="fa-solid fa-house"></i></a>
+</nav>
+<section class="tracks">
+<% tracks['items'].forEach(item => { %>
+    <div class="track-container">
+        <div class="track-name">
+            <h1 class="track-number"><%- item.track_number %> </h1>
+            <h1 class="track-name"><%- item.name  %> </h1>
+            <% minutes = Math.floor(item.duration_ms / 60 / 1000) %>
+            <% seconds = Math.floor(item.duration_ms % 60) %>
+            <% if ( minutes < 10) { %> 
+                <h2 class="track-duration"> 0<%- minutes %> 
+            <% } else { %>
+                <h2> <%- minutes %> 
+            <% } %> : <% if ( seconds < 10) { %> 
+                0<%- seconds %> </h2>
+            <% } else { %>
+                <%- seconds %> </h2>
+            <% } %>
+        </div>
+        <div class="audio-container"> 
+            <p>Preview</p> 
+            <audio  src="<%- item.preview_url %>" class="track-audio" controls></audio>
+        </div>
+    </div>
+<% }) %>
+</section>

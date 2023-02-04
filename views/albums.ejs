@@ -1,0 +1,15 @@
+<nav>
+    <button onclick={window.history.back()}> Back </button>
+    <a href="/"><i class="fa-solid fa-house"></i></a>
+</nav>
+<section class="albums">
+<% albums['items'].forEach(item => { %>
+    <% if(item.images[0]) { %> 
+        <div class="album-container">
+            <h1 class="album-name"><%- item.name  %> </h1>
+            <img src="<%- item.images[1].url %>" alt="" class="album-img">
+            <a href="/tracks/<%- item.id %>" class="link"> View Tracks </a>
+        </div>
+    <% } %>
+<% }) %>
+</section>
