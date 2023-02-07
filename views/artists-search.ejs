@@ -10,10 +10,12 @@
 <% for(let key in body.artists) { %> 
     <% if (key === 'items') { %> 
         <% body.artists[key].forEach(item => { %>
-            <% if(item.images[0]) { %>
+            <% if(item.images[0] || !item.images[0]) { %>
                 <div class="album-container">
                     <h1 class="album-name"><%- item.name  %> </h1>
-                    <img src="<%- item.images[1].url %>" alt="" class="album-img">
+                    <img src="<% if (item.images[1]) { %>
+                        <%- item.images[1].url %>
+                    <% } else { %> /images/spotify-background.jpeg <% } %>" alt="" class="album-img">
                     <a href="/albums/<%- item.id %> " class="link"> View Albums </a>
                 </div>
             <% } %>
